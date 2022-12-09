@@ -1,0 +1,74 @@
+﻿@using ERC.DAL.Controllers
+@using ERCTest.DAL.Models.Entities
+@using ERCTest.DAL.Models.ViewModels
+@model PersonalAccount
+
+
+<html>
+    <head>
+        <title>CreateAccount</title>
+        <meta charset="UTF-8" />
+    </head>
+
+    <body>
+        <h1>Добавить новый лицевой счёт</h1>
+            <form name="shift" id="form" class="shift" asp-action="CreateAccount" asp-controller="Home">
+
+                <div class="startDate">
+                    <label asp-for="StartDate">Дата начала действия</label>
+                    <input type="date" asp-for="StartDate" required/>
+                </div>
+
+                <div class="EndDate">
+                    <label asp-for="EndDate">Дата окончания действия</label>
+                    <input type="date" asp-for="EndDate" required/>
+                </div>
+
+                <div>
+                    <label asp-for="Area">Площадь помещения, кв.м</label>
+                    <input type="text" asp-for="Area" required/>
+                </div>
+
+                <div>   
+                    <label asp-for="Address">Адрес</label>
+                    <input class="adress" type="text" asp-for="Address" required/>
+                </div>
+
+                <div> 
+                @{
+                    <label asp-for="Residents">Проживающие</label>
+
+                    for(var i = 0; i <= 5; i++)
+                    {
+                        <div class="residents">
+                            <input type="hidden" asp-for="Residents[i].Surname" placeholder="Фамилия" required/>
+                            <input type="hidden" asp-for="Residents[i].Name" placeholder="Имя" required/>
+                            <input type="hidden" asp-for="Residents[i].Patronymic" placeholder="Отчество" required/>
+                        </div>
+                    }
+
+                    <button type="button" onclick="add_field()">Добавить проживающего</button>
+                }
+                </div>
+
+                <script>    
+                    let i = 0;
+
+                    function add_field(){
+                        var myDiv = document.getElementsByClassName("residents");
+                        var inputs = myDiv[i].children;
+
+                        for (let e = 0; e < 3; e++) {
+                            inputs[e].setAttribute("type", "text");
+                        }
+
+                        i++;
+                    }
+                </script>
+
+                <div>
+                    <input type="submit" value="Добавить" class="enter"/>
+                </div>
+            </form>
+    </body>
+</html>

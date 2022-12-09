@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERCTest", "ERCTest\ERCTest.csproj", "{D5D6A5A1-F5BC-43BC-8069-006ABB91CC79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERCTest.DAL", "ERC.DAL\ERCTest.DAL.csproj", "{D2472771-ECF7-446A-A93F-0C3BAF38420B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5D6A5A1-F5BC-43BC-8069-006ABB91CC79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5D6A5A1-F5BC-43BC-8069-006ABB91CC79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5D6A5A1-F5BC-43BC-8069-006ABB91CC79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5D6A5A1-F5BC-43BC-8069-006ABB91CC79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2472771-ECF7-446A-A93F-0C3BAF38420B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2472771-ECF7-446A-A93F-0C3BAF38420B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2472771-ECF7-446A-A93F-0C3BAF38420B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2472771-ECF7-446A-A93F-0C3BAF38420B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69F32C5C-4C2C-41C0-9F09-61A0A06AA084}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,78 @@
+﻿@using ERCTest.DAL.Models.ViewModels
+@model PersonalAccountViewModel
+
+<div class="accounts">
+    <form asp-action="EditAccount" asp-controller="Home">
+    @{
+        for(int i = 0; i < Model.PersonalAccounts.Count(); i++)
+        {
+            <div class="account">
+                <div class="staticDiv">   
+                    <label asp-for="PersonalAccounts[i].Id">Id:</label>
+                    <input  type="text" asp-for="PersonalAccounts[i].Id" value="@Model.PersonalAccounts[i].Id" readonly/>
+                    <a class="detail">Подробнее</a>
+                </div>
+
+                <div class="staticDiv">   
+                    <label asp-for="PersonalAccounts[i].Number">Номер лицевого счёт:</label>
+                    <input type="text" asp-for="PersonalAccounts[i].Number" value="@Model.PersonalAccounts[i].Number" readonly/>
+                </div>
+
+                <div class="inputDiv">   
+                    <label asp-for="PersonalAccounts[i].StartDate" hidden class="label">Дата начала действия:</label>
+                    <input asp-for="PersonalAccounts[i].StartDate" type="date" value="@Model.PersonalAccounts[i].StartDate" hidden readonly class="input"/>
+                </div>
+
+                <div class="inputDiv">   
+                    <label asp-for="PersonalAccounts[i].EndDate" hidden class="label">Дата окончания действия:</label>
+                    <input asp-for="PersonalAccounts[i].EndDate" type="date" value="@Model.PersonalAccounts[i].EndDate" hidden readonly class="input"/>
+                </div>
+
+                <div class="inputDiv">   
+                    <label asp-for="PersonalAccounts[i].Area" hidden class="label">Площадь помещения, кв.м:</label>
+                    <input asp-for="PersonalAccounts[i].Area" type="text" value="@Model.PersonalAccounts[i].Area" hidden readonly class="input"/>
+                </div>
+
+                <div class="inputDiv">   
+                    <label asp-for="PersonalAccounts[i].StartDate" hidden class="label">Адрес:</label>
+                    <input asp-for="PersonalAccounts[i].Address" type="text" value="@Model.PersonalAccounts[i].Address" hidden readonly class="input" id="adress"/>
+                </div>
+
+                <div class="inputDiv">   
+                    <label asp-for="PersonalAccounts[i].Residents" hidden class="label">Проживающие</label>
+                </div>
+
+                <div class="inputDiv"> 
+                @{
+                    for(var e = 0; e < @Model.PersonalAccounts[i].Residents.Count(); e++)
+                    {
+                        <div class="residents">
+                            <input type="text" hidden asp-for="PersonalAccounts[i].Residents[e].Surname" placeholder="Фамилия" readonly class="resident"/>
+                            <input type="text" hidden asp-for="PersonalAccounts[i].Residents[e].Name" placeholder="Имя" readonly class="resident"/>
+                            <input type="text" hidden asp-for="PersonalAccounts[i].Residents[e].Patronymic" placeholder="Отчество" readonly class="resident"/>
+                        </div>
+                        <input type="hidden" asp-for="PersonalAccounts[i].Residents[e].Id"/>
+                        <input type="hidden" asp-for="PersonalAccounts[i].Residents[e].PersonalAccountId"/>
+                    }
+                }
+                </div>
+
+                <input type="submit" 
+                    asp-action="EditAccount" 
+                    asp-controller="Home" 
+                    class="editContent" 
+                    value="Редактировать" 
+                    asp-route-id="@Model.PersonalAccounts[i].Id" 
+                    hidden/>
+
+                <a type="button" 
+                    asp-action="DeleteAccount" 
+                    asp-controller="Home" 
+                    class="deleteContent" 
+                    asp-route-id="@Model.PersonalAccounts[i].Id" 
+                    hidden>Удалить </a>
+            </div>
+        }
+    }
+    </form>
+</div>

@@ -1,0 +1,163 @@
+﻿body {
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: lightgray;
+    margin-left: 10px;
+}
+
+.container {
+    margin-left: 10px;
+}
+
+nav {
+    margin-left: -10px;
+}
+
+.nav-item {
+    padding-right: 35px;
+}
+
+.shift {
+    color: black;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.shift div {
+    margin: 10px;
+}
+
+.shift input {
+    padding-left: 5px;
+    margin-left: 10px;
+    width: 200px;
+    height: 25px;
+    color: black;
+    font-size: 15px;
+    border: 0px;
+    border-radius: 5px;
+    border-block-color: white;
+}
+
+.shift .enter {
+    margin-left: 10%;
+    margin-top: 10px;
+    width: 120px;
+    height: 33px;
+    font-size: 20px;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    border: 0px;
+    cursor: pointer;
+}
+
+.residents input{
+    margin: 10px;
+}
+
+.residents label{
+    margin: 0px;
+}
+
+.shift .adress {
+    width: 69%;
+}
+
+.accounts {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.account {
+    height: max-content;
+    width: max-content;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid grey;
+    border-radius: 15px;
+}
+
+.account span {
+    display: block;
+}
+
+.detail {
+    margin-left: 27.5rem;
+    cursor: pointer;
+    color: blue !important;
+    user-select: none;
+}
+
+.account .input {
+    display: block;
+    margin: 5px;
+    border: 0px;
+    border-radius: 5px;
+    border-block-color: white;
+    padding-left: 10px;
+    margin: 10px;
+    margin-left: 3px;
+    width: 150px;
+    background-color: darkgray;
+}
+
+.account #adress {
+    width: 45.3rem;
+}
+
+.account .staticDiv {
+    margin-left: 6px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: -7px;
+}
+
+.account .inputDiv {
+    margin-left: 6px;
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+
+.account .inputDiv input {
+    margin-left: 10px;
+    margin-top: 0px;
+    background: transparent;
+    border: 1px solid grey
+}
+
+.account .staticDiv input {
+    margin-left: 3px;
+    margin-top: -8px;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.account .editContent {
+    float: left;
+    width: 150px;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    border: 0px;
+}
+
+.account .deleteContent {
+    width: 6rem;
+    height: 2rem;
+    text-decoration: none;
+    text-align:center;
+    margin-left: 50px;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    border: 0px;
+}
+
+.account .residents {
+    display: flex;
+    flex-direction: column;
+}
