@@ -8,13 +8,10 @@ namespace ERCTest.DAL.Models.Interfaces
 
         void Create(T item);
 
-        abstract void Update(T item);
-
-        void UpdateRange(List<T> item)
-        {
-
-        }
+        void Update(T item);
 
         void Delete(int id);
+
+        void UpdateRange(List<T> item) { }
     }
 }

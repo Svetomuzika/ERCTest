@@ -3,8 +3,10 @@ using ERCTest.DAL.Models.Interfaces;
 using ERCTest.DAL.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using System;
+using System.Collections.Generic;
 
-namespace ERC.DAL.Controllers
+namespace ERCTest.DAL.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -23,7 +25,7 @@ namespace ERC.DAL.Controllers
             var accounts = unitOfWork.PersonalAccounts.GetAll().ToList();
             var residents = unitOfWork.Residents.GetAll().ToList();
 
-            var viewModel = new PersonalAccountViewModel() { PersonalAccounts = accounts, Residents = residents };
+            var viewModel = new PersonalAccountViewModel() { PersonalAccounts = accounts};
 
             return viewModel;
         }

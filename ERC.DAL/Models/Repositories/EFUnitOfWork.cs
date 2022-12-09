@@ -1,6 +1,7 @@
 ﻿using ERCTest.DAL.Models.Interfaces;
 using ERCTest.DAL.Models.Entities;
 using ERCTest.DAL.Models.EF;
+using ERCTest.DAL.Models.ViewModels;
 using System;
 
 namespace ERCTest.DAL.Models.Repositories
@@ -10,6 +11,7 @@ namespace ERCTest.DAL.Models.Repositories
         private ApplicationContext DBContext;
         private PersonalAccountRepository personalAccountRepository;
         private ResidentRepository residentRepository;
+        private FilterRepository filterRepository;
 
         public EFUnitOfWork(ApplicationContext context)
         {
@@ -24,6 +26,17 @@ namespace ERCTest.DAL.Models.Repositories
                     personalAccountRepository = new PersonalAccountRepository(DBContext);
 
                 return personalAccountRepository;
+            }
+        }
+
+        public IFilterRepository<PersonalAccountViewModel> Filter
+        {
+            get
+            {
+                if (filterRepository == null)
+                    filterRepository = new FilterRepository(DBContext);
+
+                return filterRepository;
             }
         }
 

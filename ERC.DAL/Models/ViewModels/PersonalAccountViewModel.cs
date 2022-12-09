@@ -7,8 +7,10 @@ namespace ERCTest.DAL.Models.ViewModels
     {
         public List<PersonalAccount> PersonalAccounts { get; set; }
 
-        public int Id { get; set; }
+        public string StartDate { get; set; }
 
-        public List<Resident> Residents { get; set; }
+        public string Name { get; set; }
+
+        public string Adress { get; set; }
     }
 }

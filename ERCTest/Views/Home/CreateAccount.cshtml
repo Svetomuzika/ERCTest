@@ -1,5 +1,4 @@
-﻿@using ERC.DAL.Controllers
-@using ERCTest.DAL.Models.Entities
+﻿@using ERCTest.DAL.Models.Entities
 @using ERCTest.DAL.Models.ViewModels
 @model PersonalAccount
 
@@ -12,16 +11,16 @@
 
     <body>
         <h1>Добавить новый лицевой счёт</h1>
-            <form name="shift" id="form" class="shift" asp-action="CreateAccount" asp-controller="Home">
+            <form id="form" class="shift" asp-action="CreateAccount" asp-controller="Home">
 
                 <div class="startDate">
                     <label asp-for="StartDate">Дата начала действия</label>
-                    <input type="date" asp-for="StartDate" required/>
+                    <input type="date" asp-for="StartDate" required id="startDate"/>
                 </div>
 
                 <div class="EndDate">
                     <label asp-for="EndDate">Дата окончания действия</label>
-                    <input type="date" asp-for="EndDate" required/>
+                    <input type="date" asp-for="EndDate" required id="endDate"/>
                 </div>
 
                 <div>
@@ -37,6 +36,7 @@
                 <div> 
                 @{
                     <label asp-for="Residents">Проживающие</label>
+                    <button type="button" onclick="add_field()" id="addResident">Добавить проживающего</button>
 
                     for(var i = 0; i <= 5; i++)
                     {
@@ -47,27 +47,11 @@
                         </div>
                     }
 
-                    <button type="button" onclick="add_field()">Добавить проживающего</button>
                 }
                 </div>
 
-                <script>    
-                    let i = 0;
-
-                    function add_field(){
-                        var myDiv = document.getElementsByClassName("residents");
-                        var inputs = myDiv[i].children;
-
-                        for (let e = 0; e < 3; e++) {
-                            inputs[e].setAttribute("type", "text");
-                        }
-
-                        i++;
-                    }
-                </script>
-
                 <div>
-                    <input type="submit" value="Добавить" class="enter"/>
+                    <input type="button" onclick="submitForm()" value="Добавить" class="enter" id="submitFormId"/>
                 </div>
             </form>
     </body>

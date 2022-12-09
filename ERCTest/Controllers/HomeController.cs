@@ -32,7 +32,7 @@ namespace ERCTest.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var viewModel = await httpClient.GetFromJsonAsync<PersonalAccountViewModel> ("https://localhost:5000/api/DAL/getAll");
+            var viewModel = await httpClient.GetFromJsonAsync<PersonalAccountViewModel>("https://localhost:44302/api/DAL/GetAll");
 
             return View(viewModel);
         }
@@ -45,7 +45,7 @@ namespace ERCTest.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAccount(PersonalAccount personalAccount)
         {
-            await httpClient.PostAsJsonAsync("https://localhost:5000/api/DAL/Create", personalAccount);
+            await httpClient.PostAsJsonAsync("https://localhost:44302/api/DAL/Create", personalAccount);
 
             return RedirectToAction("Index");
         }
@@ -54,22 +54,16 @@ namespace ERCTest.Controllers
         public async Task<IActionResult> EditAccount(int id, PersonalAccountViewModel viewModel)
         {
             var updateAcc = viewModel.PersonalAccounts.Where(x => x.Id == id).SingleOrDefault();
-            await httpClient.PutAsJsonAsync("https://localhost:5000/api/DAL/Update", updateAcc);
+            await httpClient.PutAsJsonAsync("https://localhost:44302/api/DAL/Update", updateAcc);
 
             return NoContent();
         }
 
         public async Task<IActionResult> DeleteAccount(int id)
         {
-            await httpClient.DeleteAsync($"https://localhost:5000/api/DAL/Delete/{id}");
+            await httpClient.DeleteAsync($"https://localhost:44302/api/DAL/Delete/{id}");
 
             return RedirectToAction("Index");
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

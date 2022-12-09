@@ -52,6 +52,15 @@ nav {
     cursor: pointer;
 }
 
+#addResident {
+    background-color: #f0f0f0;
+    width: max-content;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
 .residents input{
     margin: 10px;
 }
@@ -84,9 +93,9 @@ nav {
 }
 
 .detail {
-    margin-left: 27.5rem;
+    margin-left: 17rem;
     cursor: pointer;
-    color: blue !important;
+    color: #007bff !important;
     user-select: none;
 }
 
@@ -111,7 +120,7 @@ nav {
     margin-left: 6px;
     display: flex;
     flex-direction: row;
-    margin-bottom: -7px;
+    margin-bottom: 10px;
 }
 
 .account .inputDiv {
@@ -134,6 +143,7 @@ nav {
     border: none;
     background: transparent;
     outline: none;
+    font-weight: bold;
 }
 
 .account .editContent {
@@ -161,3 +171,46 @@ nav {
     display: flex;
     flex-direction: column;
 }
+
+.accounts .filters {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.filterResidentsButton:hover,
+.filterResidentsButton {
+    width: 25rem;
+    height: 2rem;
+    text-decoration: none !important;
+    text-align: center;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    border: 0px;
+}
+
+.accounts .filters .divFilter {
+    margin-left: 3.7rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.accounts .filters .filterButton {
+    margin-bottom: 10px;
+    width: 25rem;
+    height: 2rem;
+    text-decoration: none !important;
+    text-align: center;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    border: 0px;
+}
+
+.accounts .filters .filterInput {
+    width: max-content;
+    align-self: flex-start;
+}
+
+
